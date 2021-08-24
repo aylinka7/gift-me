@@ -1,0 +1,86 @@
+.auth{
+  width: 800px;
+  background: #EAE8FF;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin: 90px auto;
+  margin-bottom: 170px;
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 184px;
+  & input{
+    background: #FBFBFB;
+    border-radius: 20px;
+    height: 60px;
+    padding-left: 20px;
+    &::-webkit-input-placeholder{
+      font-weight: 500;
+      color: #000000;
+    }
+  }
+  &__link{
+    text-decoration: underline;
+    color: #066F9C;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    width: 600px;
+  }
+  &__title{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 5px;
+  }
+  &__gmail{
+    font-size: 14px;
+    line-height: 17px;
+    color: #565656;
+    margin-bottom: 10px;
+  }
+  &__star{
+    text-align: left;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FA0707;
+    margin-top: 20px;
+  }
+  &__symbols{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.54);
+    margin-top: 5px;
+    text-align: left;
+  }
+  &__forgot{
+    text-align: right;
+    font-weight: 500;
+    margin-top: -10px;
+    color: #000000;
+    margin-bottom: 68px;
+  }
+  &__btn{
+    background: #1DB3C3;
+    border-radius: 20px;
+    font-weight: 500;
+    color: #FBFBFB;
+    padding: 22px 0;
+    width: 370px;
+    margin-bottom: 21px;
+  }
+  &__acc{
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  &__reg{
+    color: #066F9C;
+    font-weight: 500;
+  }
+  &__input{
+    margin-bottom: 110px;
+  }
+}
