@@ -1,0 +1,30 @@
+.friends{
+  &__block{
+    display: flex;
+    grid-gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+    &-name{
+      font-size: 17px;
+      line-height: 21px;
+      color: #1A1A1A;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    &-input{
+      border: 1px solid #D7D7D7;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 17px;
+      color: #AAAAAA;
+      padding: 6px;
+    }
+    &-ava{
+      & img{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

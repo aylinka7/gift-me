@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 import './sidePanel.scss'
 import Home from "../../../assets/img/home.svg";
 import Friends from "../../../assets/img/friends.svg";
@@ -11,26 +12,26 @@ function SidePanel() {
         <div>
             <section className="side__panel">
                 <div className="side__panel-items">
-                    <div className="side__panel-item">
+                    <Link to="/dashboard"><div className="side__panel-item">
                         <span><img src={Home} alt=""/></span>
                         Личный кабинет
-                    </div>
-                    <div className="side__panel-item">
+                    </div></Link>
+                    <Link to="/friends"><div className="side__panel-item">
                         <span><img src={Friends} alt=""/></span>
                         Мои друзья
-                    </div>
-                    <div className="side__panel-item">
+                    </div></Link>
+                    <Link to="/myholidays"><div className="side__panel-item">
                         <span><img src={Party} alt=""/></span>
                         Мои праздники
-                    </div>
-                    <div className="side__panel-item">
+                    </div></Link>
+                    <Link to="/mywishes"><div className="side__panel-item">
                         <span><img src={OpenGift} alt=""/></span>
                         Мой список желаний
-                    </div>
-                    <div className="side__panel-item">
+                    </div></Link>
+                    <Link to="/busket"><div className="side__panel-item">
                         <span><img src={CloseGift} alt=""/></span>
                         Корзина
-                    </div>
+                    </div></Link>
 
 
 

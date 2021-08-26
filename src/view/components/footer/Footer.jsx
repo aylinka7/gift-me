@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 import './footer.scss'
 import Insta from '../../../assets/img/insta.svg'
 import InstaNew from '../../../assets/img/insatnew.svg'
@@ -13,7 +14,7 @@ function Footer() {
         <div className="footer__wrapper">
             <footer className="footer">
                 <div className="footer__logo">gift&rarr;me</div>
-                <div className="footer__main_item">О нас</div>
+                <Link to="/"><div className="footer__main_item">О нас</div></Link>
                 <div className="footer__column">
                     <div className="footer__main_item">Контакты</div>
                     <div className="footer__item">+996 703 838 228</div>
@@ -22,10 +23,10 @@ function Footer() {
                 <div className="footer__column">
                     <div className="footer__main_item">Социальные сети</div>
                     <div className="footer__icons">
-                        <div className="footer__icons_item"><img src={FacebookNew} alt=""/></div>
-                        <div className="footer__icons_item"><img src={Twitter} alt=""/></div>
-                        <div className="footer__icons_item"><img src={InstaNew} alt=""/></div>
-                        <div className="footer__icons_item"><img src={In} alt=""/></div>
+                        <a href="#" className="footer__icons_item"><img src={FacebookNew} alt=""/></a>
+                        <a href="#" className="footer__icons_item"><img src={Twitter} alt=""/></a>
+                        <a href="#" className="footer__icons_item"><img src={InstaNew} alt=""/></a>
+                        <a href="#" className="footer__icons_item"><img src={In} alt=""/></a>
                     </div>
                 </div>
             </footer>

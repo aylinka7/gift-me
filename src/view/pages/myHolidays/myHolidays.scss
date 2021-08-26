@@ -1,20 +1,20 @@
-.mywishes{
+.myholidays {
   position: relative;
-  margin: 0 auto;
-  & span{
+  width: 100%;
+  max-width: 1040px;
+  & span {
     cursor: pointer;
   }
-  &__title{
+  &__title {
     font-weight: 500;
     font-size: 32px;
     line-height: 40px;
-    color: #6860BC;
-    text-align: center;
-    margin-top: 90px;
+    margin-top: 56px;
     margin-bottom: 40px;
+    margin-left: 44px;
   }
-  &__btn{
-    background: var(--color-logo);
+  &__btn {
+    background: #D4C2FC;
     border-radius: 30px;
     font-weight: 500;
     color: #1A1A1A;
@@ -23,18 +23,21 @@
     align-items: center;
     grid-gap: 20px;
     position: absolute;
-    top: 84px;
-    right: 0px;
-    & span{
+    top: 50px;
+    right: 36px;
+    & span {
       position: absolute;
       top: 12px;
       left: 24px;
     }
   }
-  &__blocks{
+  &__blocks {
     display: flex;
     flex-direction: column;
-    grid-gap: 40px;
-    margin-bottom: 255px;
+    grid-gap: 0px;
+    margin-bottom: 200px;
+    width: 936px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 }

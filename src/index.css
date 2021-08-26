@@ -12,6 +12,11 @@ button, input{
   outline: none;
   cursor: pointer;
 }
+textarea{
+  resize: none;
+  outline: none;
+  border: none;
+}
 
 *{
   margin: 0;
@@ -45,4 +50,8 @@ code {
 
 .wrapper{
   display: flex;
+}
+
+.cur{
+  cursor: pointer;
 }

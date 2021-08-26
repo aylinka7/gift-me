@@ -1,0 +1,42 @@
+.friends{
+  margin: 0 auto;
+  text-align: center;
+  &__search{
+    position: relative;
+    margin-top: 22px;
+    margin-bottom: 45px;
+    & input{
+      border: 2px solid #FFCA12;
+      box-sizing: border-box;
+      border-radius: 30px;
+      padding: 18px 64px;
+      width: 790px;
+    }
+  }
+  &__loupe{
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    height: 20px;
+    //width: 20px;
+  }
+  &__dagger{
+    position: absolute;
+    top: 18px;
+    right: 150px;
+  }
+  &__title{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    color: #1A1A1A;
+    margin-bottom: 72px;
+  }
+  &__blocks{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 133px;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+}
