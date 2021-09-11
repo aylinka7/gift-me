@@ -27,6 +27,7 @@
       margin-top: 58px;
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
       border-radius: 30px;
+      font-family: Montserrat;
     }
     &_img2{
       margin-top: -170px;
@@ -83,5 +84,17 @@
   &__macbook{
     text-align: center;
     margin-bottom: 100px;
+    position: relative;
+    &-numberus{
+      background: #dee8f5;
+      position: absolute;
+      font-size: 50px;
+      font-weight: 600;
+      padding: 30px;
+      top: 310px;
+      left: 430px;
+      width: 210px;
+      text-align: center;
+    }
   }
 }

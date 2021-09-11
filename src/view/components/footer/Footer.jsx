@@ -1,12 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom"
 import './footer.scss'
-import Insta from '../../../assets/img/insta.svg'
 import InstaNew from '../../../assets/img/insatnew.svg'
-import  Facebook from '../../../assets/img/facebook.svg'
-import  FacebookNew from '../../../assets/img/facebooknew.svg'
-import  Telegram from '../../../assets/img/teelgram.svg'
-import  Twitter from '../../../assets/img/twitter.svg'
+import FacebookNew from '../../../assets/img/facebooknew.svg'
+import Twitter from '../../../assets/img/twitter.svg'
 import In from '../../../assets/img/in.svg'
 
 function Footer() {
@@ -14,7 +11,9 @@ function Footer() {
         <div className="footer__wrapper">
             <footer className="footer">
                 <div className="footer__logo">gift&rarr;me</div>
-                <Link to="/"><div className="footer__main_item">О нас</div></Link>
+                <Link to="/">
+                    <div className="footer__main_item">О нас</div>
+                </Link>
                 <div className="footer__column">
                     <div className="footer__main_item">Контакты</div>
                     <div className="footer__item">+996 703 838 228</div>
@@ -32,7 +31,7 @@ function Footer() {
             </footer>
             <div className="footer__copyright">Copyright © 2021 Gift me</div>
         </div>
-        );
+    );
 }
 
 export default Footer;

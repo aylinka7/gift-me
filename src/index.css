@@ -1,57 +1,86 @@
-html{
-  --color-logo: #FFCA12;
-  --color-theme: #1DB3C3;
+html {
+    --color-logo: #FFCA12;
+    --color-theme: #1DB3C3;
+    --color-random: red;
 }
 
-a{
-  text-decoration: none;
-  cursor: pointer;
-}
-button, input{
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-textarea{
-  resize: none;
-  outline: none;
-  border: none;
+a {
+    text-decoration: none;
+    cursor: pointer;
 }
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  color: #000000;
+button, input {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("./assets/img/select.svg");
+    background-repeat: no-repeat;
+    background-position: 110px;
+    cursor: pointer;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
 }
 
 body {
-  font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.container{
-  max-width: 1176px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
+.container {
+    max-width: 1176px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
 }
 
-.wrapper{
-  display: flex;
+.wrapper {
+    display: flex;
 }
 
-.cur{
-  cursor: pointer;
+.cur {
+    cursor: pointer;
+}
+
+.loading {
+    background: rgb(24, 116, 210);
+    height: 100vh;
+}
+
+.inloading {
+    margin-left: 270px;
+}
+
+.error{
+    font-size: 12px;
+    color: red;
+    margin-top: -5px;
+    margin-bottom: -5px;
 }

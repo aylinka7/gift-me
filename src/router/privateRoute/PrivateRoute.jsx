@@ -5,15 +5,11 @@ export function PrivateRoute({Component, path, isAuth, exact, ...props}) {
     return (
         <Route exact={exact} path={path}>
             {
-                isAuth ? <Component {...props} /> : <Redirect to="/auth" />
+                isAuth ? <Component {...props} /> : <Redirect to="/auth"/>
             }
         </Route>
     );
 }
-
-
-
-
 
 
 // import {Redirect, Route} from "react-router-dom";

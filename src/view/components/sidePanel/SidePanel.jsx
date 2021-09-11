@@ -11,48 +11,41 @@ function SidePanel() {
     return (
         <div>
             <section className="side__panel">
-                <div className="side__panel-items">
-                    <Link to="/dashboard"><div className="side__panel-item">
-                        <span><img src={Home} alt=""/></span>
-                        Личный кабинет
-                    </div></Link>
-                    <Link to="/friends"><div className="side__panel-item">
-                        <span><img src={Friends} alt=""/></span>
-                        Мои друзья
-                    </div></Link>
-                    <Link to="/myholidays"><div className="side__panel-item">
-                        <span><img src={Party} alt=""/></span>
-                        Мои праздники
-                    </div></Link>
-                    <Link to="/mywishes"><div className="side__panel-item">
-                        <span><img src={OpenGift} alt=""/></span>
-                        Мой список желаний
-                    </div></Link>
-                    <Link to="/busket"><div className="side__panel-item">
-                        <span><img src={CloseGift} alt=""/></span>
-                        Корзина
-                    </div></Link>
-
-
-
-                    {/*<div className="side__panel-item">*/}
-                    {/*    <span><img src={Home} alt=""/></span>*/}
-                    {/*    Личный кабинет*/}
-                    {/*</div>*/}
-                    {/*<div className="side__panel-item">*/}
-                    {/*    <span><img src={Friends} alt=""/></span>*/}
-                    {/*    Друзья*/}
-                    {/*</div>*/}
-                    {/*<div className="side__panel-item">*/}
-                    {/*    <span><img src={Party} alt=""/></span>*/}
-                    {/*    Праздники*/}
-                    {/*</div>*/}
-                    {/*<div className="side__panel-item">*/}
-                    {/*    <span><img src={OpenGift} alt=""/></span>*/}
-                    {/*    Список желаний*/}
-                    {/*</div>*/}
+                <div className="side__panel-sticky">
+                    <div className="side__panel-items">
+                        <Link to="/dashboard">
+                            <div className="side__panel-item">
+                                <span><img src={Home} alt=""/></span>
+                                Личный кабинет
+                            </div>
+                        </Link>
+                        <Link to="/friends">
+                            <div className="side__panel-item">
+                                <span><img src={Friends} alt=""/></span>
+                                Мои друзья
+                            </div>
+                        </Link>
+                        <Link to="/myholidays">
+                            <div className="side__panel-item">
+                                <span><img src={Party} alt=""/></span>
+                                Мои праздники
+                            </div>
+                        </Link>
+                        <Link to="/mywishes">
+                            <div className="side__panel-item">
+                                <span><img src={OpenGift} alt=""/></span>
+                                Мой список желаний
+                            </div>
+                        </Link>
+                        <Link to="/busket">
+                            <div className="side__panel-item">
+                                <span><img src={CloseGift} alt=""/></span>
+                                Корзина
+                            </div>
+                        </Link>
+                    </div>
+                    <button className="side__panel-btn">Поделиться</button>
                 </div>
-                <button className="side__panel-btn">Поделиться </button>
             </section>
         </div>
     );

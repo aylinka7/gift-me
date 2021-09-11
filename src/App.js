@@ -7,25 +7,31 @@ import Registr from "./view/pages/registr/Registr";
 import Dashboard from "./view/pages/dashboard/Dashboard";
 import MyWishes from "./view/pages/myWishes/MyWishes";
 import Busket from "./view/pages/basket/Busket";
-
 import {PrivateRoute} from "./router/privateRoute/PrivateRoute";
 import {OpenRoute} from "./router/openRoute/OpenRoute";
-
+import API from "./api/index"
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link, useHistory
 } from "react-router-dom";
-
 import Undefined from "./view/pages/undefined/Undefined";
 import Friends from "./view/pages/friends/Friends";
 import MyHolidays from "./view/pages/myHolidays/MyHolidays";
 import {ProfileSettings} from "./view/pages/profileSettings/ProfileSettings";
-import API from "./api";
-
+import {RegistrRoute} from "./router/registrRoute/RegistrRoute";
+import User from "./view/pages/user/User";
+import UserWishes from "./view/pages/userWishes/UserWishes";
+import UserHolidays from "./view/pages/userHolidays/UserHolidays";
+import {useDispatch} from "react-redux";
+import {setName5} from "./store/actions/actions";
 
 function App() {
+    const [isAuth, setIsAuth] = useState(() => JSON.parse(localStorage.getItem("user")))
+    useEffect(() => {
+        localStorage.setItem("user", JSON.stringify(isAuth))
+    }, [isAuth])
+
     const [ava, setAva] = useState(null)
     const [bg, setBg] = useState(null)
     const handleAvaChange = (e) => {
@@ -57,23 +63,65 @@ function App() {
         }
     }
 
-    const [name, setName] = useState("whoknows")
-    const [surname, setSurname] = useState("whoknows")
+    const dispatch = useDispatch();
 
-    const [user, setUser] = useState(null)
-    const [isAuth, setIsAuth] = useState(() => JSON.parse(localStorage.getItem("user")))
+    const [name2, setName2] = useState("")
+    const [surname2, setSurname2] = useState("")
+    const [aboutMe2, setAboutMe2] = useState("")
+    const [facebook2, setFacebook2] = useState("")
+    const [insta2, setInsta2] = useState("")
+
+    const [name, setName] = useState("")
+    const [surname, setSurname] = useState("")
+    const [email, setEmail] = useState("")
+    const [aboutMe, setAboutMe] = useState("")
+    const [facebook, setFacebook] = useState("")
+    const [insta, setInsta] = useState("")
+    const [birthDate, setBirthDate] = useState("Дата")
+    const [birthDay, setBirthDay] = useState("День")
+    const [birthMonth, setBirthMonth] = useState("Месяц")
+    const [birthYear, setBirthYear] = useState("Год")
+   useEffect(() => {
+       if(isAuth) {
+           API.getUser(JSON.parse(localStorage.getItem("user"))?.user_id)
+               .then((res) => {
+                   dispatch(setName5(res.data))
+                   setName2(res.data.first_name)
+                   setInsta2(res.data.instagram_link)
+                   setFacebook2(res.data.facebook_link)
+                   setAboutMe2(res.data.description)
+                   setSurname2(res.data.last_name)
+
+                   // setName(res.data.first_name)
+                   // setSurname(res.data.last_name)
+                   // setEmail(res.data.email)
+                   // setBirthDate(res.data.birth_date)
+                   // setAboutMe(res.data.description)
+                   // setFacebook(res.data.facebook_link)
+                   // setInsta(res.data.instagram_link)
+               })
+       }
+   }, [name2, surname2, aboutMe2])                               // TODO
     useEffect(() => {
-        localStorage.setItem("user", JSON.stringify(isAuth))
-        // if(isAuth){
-        //     API.getUser(id)
-        //         .then((res) => {
-        //             setUser(res.data)
-        //         })
-        // }
-    }, [isAuth])
+        let arr = birthDate.split("-")
+        
+        setBirthDay(arr[2])
+        setBirthMonth(arr[1])
+        setBirthYear(arr[0])
+    }, [birthDate])
+
+    const clear = () => {
+        let arr = birthDate.split("-")
+        setBirthDay(arr[2])
+        setBirthMonth(arr[1])
+        setBirthYear(arr[0])
+        // setName(name2)
+        // setSurname(surname2)
+        // setInsta(insta2)
+        // setFacebook(facebook2)
+    }
     const exit = () => {
         setIsAuth(null);
-        // history.push('/auth')
     }
     return (
         <Router>
@@ -81,42 +129,43 @@ function App() {
                 <Header isAuth={isAuth}
                         exit={exit}/>
                 <Switch>
-                    <OpenRoute path="/auth" Component={() => <Auth setIsAuth={setIsAuth}/>} isAuth={isAuth}/>
-                    <OpenRoute path="/sign-up" Component={Registr} isAuth={isAuth}/>
+                    <OpenRoute path="/auth" isAuth={isAuth} Component={() => <Auth setIsAuth={setIsAuth}/>} />
+                    <RegistrRoute path="/sign-up" isAuth={isAuth} Component={() => <Registr isAuth={isAuth} />} />
+                    <PrivateRoute path="/user/:id" isAuth={isAuth} Component={User} />
+                    <PrivateRoute path="/userwishes/:id" isAuth={isAuth} Component={UserWishes} />
+                    <PrivateRoute path="/userholidays/:id" isAuth={isAuth} Component={UserHolidays} />
                     <PrivateRoute path="/dashboard" isAuth={isAuth} Component={() =>
                         <Dashboard
                             ava={ava}
                             bg={bg}
                             name={name}
                             surname={surname}
-                        />
-                    }/>
-                    <Route path="/mywishes">
-                        <MyWishes/>
-                    </Route>
-                    <Route path="/myholidays">
-                        <MyHolidays />
-                    </Route>
-                    <Route path="/busket">
-                        <Busket/>
-                    </Route>
-                    <Route path="/friends">
-                        <Friends />
-                    </Route>
-                    <Route path="/profilesettings">
+                            email={email}
+                            aboutMe={aboutMe}
+                        />}
+                    />
+                    <PrivateRoute path="/mywishes" isAuth={isAuth} Component={MyWishes} />
+                    <PrivateRoute path="/myholidays" isAuth={isAuth} Component={MyHolidays} />
+                    <PrivateRoute path="/busket" isAuth={isAuth} Component={Busket} />
+                    <PrivateRoute path="/friends" isAuth={isAuth} Component={() => <Friends isAuth={isAuth} />} />
+                    <PrivateRoute path="/profilesettings" isAuth={isAuth} Component={() =>
                         <ProfileSettings
-                        handleAvaChange={handleAvaChange}
-                        handleBgChange={handleBgChange}
-                        name={name}
-                        setName={setName}
-                        setSurname={setSurname}
-                        surname={surname}
-                        nameIsEdit={name.isEdit}
-                        surnameIsEdit={surname.isEdit}
-                        />
-                    </Route>
+                            handleAvaChange={handleAvaChange}
+                            handleBgChange={handleBgChange}
+                            birthDay={birthDay}
+                            birthMonth={birthMonth}
+                            birthYear={birthYear}
+                            setBirthDay={setBirthDay}
+                            setBirthDate={setBirthDate}
+                            setBirthMonth={setBirthMonth}
+                            setBirthYear={setBirthYear}
+                            setName={setName}
+
+                            clear={clear}
+                        />}
+                    />
                     <Route exact path="/">
-                        <Main/>
+                        <Main isAuth={isAuth}/>
                     </Route>
                     <Route exact path="*">
                         <Undefined/>

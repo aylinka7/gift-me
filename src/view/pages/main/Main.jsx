@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './main.scss'
 import Pic1 from '../../../assets/img/pic1.svg'
 import Pic2 from '../../../assets/img/pic2.svg'
@@ -8,8 +8,20 @@ import Rocket from '../../../assets/img/rocket.svg'
 import Present from '../../../assets/img/present.svg'
 import Earth from '../../../assets/img/earth.svg'
 import Macbook from '../../../assets/img/macbook.svg'
+import API from "../../../api/index"
+import {Link} from "react-router-dom";
 
-function Main() {
+function Main(props) {
+    const [users, setUsers] = useState("Войдите")
+    useEffect(() => {
+        if (props.isAuth !== null) {
+            API.getUsers()
+                .then((res) => {
+                    setUsers(res?.data?.length)
+                })
+        }
+    }, [])
+
     return (
         <div className="main">
             <section className="main__about container">
@@ -20,7 +32,9 @@ function Main() {
                             свои желаемые подарки, даже указать ссылку на этот подарок.
                             Возможность делиться вещами.
                         </div>
-                        <button className="main__about_btn">Создать WishList</button>
+                        <Link to="/mywishes">
+                            <button type="button" className="main__about_btn">Создать WishList</button>
+                        </Link>
                     </div>
                     <div><img src={Pic1} alt=""/></div>
                 </div>
@@ -54,10 +68,15 @@ function Main() {
                 </div>
             </section>
             <section className="main__earth container">
-                <div className="main__earth_desc">Хочешь в команду супер героев?! Дари крутые вещи из своего арсенала которыми ты уже не пользуешься  своим друзьям, тем самым уменьшив экологический след стань частью защитников природы :) </div>
+                <div className="main__earth_desc">Хочешь в команду супер героев?! Дари крутые вещи из своего арсенала
+                    которыми ты уже не пользуешься своим друзьям, тем самым уменьшив экологический след стань частью
+                    защитников природы :)
+                </div>
                 <div className="main__earth_img"><img src={Earth} alt=""/></div>
             </section>
-            <div className="main__macbook"><img src={Macbook} alt=""/></div>
+            <div className="main__macbook"><img src={Macbook} alt=""/>
+                <div className="main__macbook-numberus">{users}</div>
+            </div>
         </div>
     );
 }

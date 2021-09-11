@@ -1,0 +1,60 @@
+.userwishes{
+  margin: 0 auto;
+  & span{
+    cursor: pointer;
+  }
+  &__title{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    color: #6860BC;
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 40px;
+  }
+  &__btn{
+    background: var(--color-logo);
+    border-radius: 30px;
+    font-weight: 500;
+    color: #1A1A1A;
+    padding: 17px 29px 17px 64px;
+    display: flex;
+    align-items: center;
+    grid-gap: 20px;
+    position: absolute;
+    top: 160px;
+    right: 40px;
+    font-family: Montserrat;
+    &-div {
+    }
+    & span{
+      position: absolute;
+      top: 12px;
+      left: 24px;
+    }
+  }
+  &__blocks{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 40px;
+    margin-bottom: 255px;
+  }
+  &__empty{
+    text-align: center;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    & b{
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+    }
+    & p{
+      margin-top: 11px;
+      font-size: 16px;
+      line-height: 24px;
+      opacity: 0.4;
+    }
+  }
+}

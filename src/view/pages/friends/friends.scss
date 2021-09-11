@@ -11,6 +11,7 @@
       border-radius: 30px;
       padding: 18px 64px;
       width: 790px;
+      cursor: text;
     }
   }
   &__loupe{
@@ -24,6 +25,7 @@
     position: absolute;
     top: 18px;
     right: 150px;
+    cursor: pointer;
   }
   &__title{
     font-weight: 500;

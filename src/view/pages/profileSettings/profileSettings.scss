@@ -1,9 +1,9 @@
-.profile{
+.profile {
   max-width: 600px;
   width: 100%;
   margin: 74px auto;
-  &__input{
-    border: 1px solid #F0F0F0;
+  &__input {
+    border: 1px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     height: 50px;
@@ -12,58 +12,69 @@
     position: relative;
     padding: 12px 20px;
     width: 100%;
+    font-family: 'Montserrat';
+    cursor: text;
   }
-  &__text{
+  &_input{
+    display: flex;
+    position: relative;
+    cursor: text;
+  }
+  &__text {
     margin-left: 7px;
     display: flex;
     align-items: center;
   }
-  &__edit{
+  &__edit {
     position: absolute;
-    top: 12px;
+    top: 17px;
     right: 20px;
     cursor: pointer;
   }
-  &__about{
-    border: 1px solid #F0F0F0;
+  &__about {
+    border: 1px solid #f0f0f0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     width: 100%;
     padding: 10px;
+    font-family: 'Montserrat';
     height: 100px;
   }
-  &__symbols{
+  &__symbols {
     font-size: 12px;
     line-height: 15px;
     color: rgba(0, 0, 0, 0.69);
     margin-left: 7px;
     margin-bottom: 24px;
   }
-  &__birthday{
+  &__birthday {
     display: flex;
-    grid-gap: 30px;
+    grid-gap: 55px;
     margin-top: 7px;
     margin-bottom: 25px;
-    &-item{
-      border: 1px solid #F0F0F0;
+    &-item {
+      border: 1px solid #f0f0f0;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 10px;
       width: 162px;
       height: 50px;
-      padding: 15px 53px;
+      padding: 0 40px;
+      font-family: 'Montserrat';
+      font-size: 15px;
+      outline: none;
     }
   }
-  &__buttons{
+  &__buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 110px;
   }
-  &__btn{
+  &__btn {
     font-weight: 500;
     padding: 14px 43px;
     background: var(--color-logo);
     border-radius: 10px;
-    &-none{
+    &-none {
       padding: 15px 66px;
       font-size: 16px;
       line-height: 20px;
@@ -71,34 +82,40 @@
       border: 2px solid var(--color-logo);
     }
   }
-  &__changes{
+  &__changes {
     display: flex;
     justify-content: center;
     margin-top: 147px;
     grid-gap: 27px;
   }
-  &__password{
+  &__password {
     font-size: 15px;
     line-height: 18px;
-    color: #1DB3C3;
-    text-decoration: underline;
+    color: #1db3c3;
     cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
-  &__delete{
+  &__delete {
     font-size: 15px;
     line-height: 18px;
-    color: #FF0000;
+    color: #ff0000;
     cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
-  &__images{
+  &__images {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
   }
-  &__none{
+  &__none {
     opacity: 0;
     visibility: hidden;
     width: 0;
     height: 0;
   }
 }
+

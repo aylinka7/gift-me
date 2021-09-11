@@ -1,5 +1,4 @@
 .mywishes{
-  position: relative;
   margin: 0 auto;
   & span{
     cursor: pointer;
@@ -23,8 +22,11 @@
     align-items: center;
     grid-gap: 20px;
     position: absolute;
-    top: 84px;
-    right: 0px;
+    top: 160px;
+    right: 40px;
+    font-family: Montserrat;
+    &-div {
+    }
     & span{
       position: absolute;
       top: 12px;
@@ -36,5 +38,23 @@
     flex-direction: column;
     grid-gap: 40px;
     margin-bottom: 255px;
+  }
+  &__empty{
+    text-align: center;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    & b{
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+    }
+    & p{
+      margin-top: 11px;
+      font-size: 16px;
+      line-height: 24px;
+      opacity: 0.4;
+    }
   }
 }

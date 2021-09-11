@@ -12,7 +12,9 @@ function BusketBlock() {
                 <div className="busket__block-texts">
                     <div className="busket__block-name">Курманова Айгерим</div>
                     <div className="busket__block-title">Книга</div>
-                    <p className="busket__block-desc">This is the very beginning of your direct message history withOnly the two of you are in this conversation, and no one else can join it.<span>Learn more.....</span></p>
+                    <p className="busket__block-desc">This is the very beginning of your direct message history withOnly
+                        the two of you are in this conversation, and no one else can join
+                        it.<span>Learn more.....</span></p>
                 </div>
             </div>
             <div className="busket__block-act">

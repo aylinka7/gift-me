@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link, useHistory} from "react-router-dom"
+import {Link} from "react-router-dom"
 import './auth.scss'
 import API from "../../../api";
 import jwt_decode from "jwt-decode";
@@ -21,9 +21,9 @@ function Auth(props) {
                 props.setIsAuth({...res.data, ...decode})
             })
             .catch((error) => {
-                if(error.response.status = 401){
+                if (error.response.status === 401) {
                     setIsError("Неправильный логин или пароль")
-                }else{
+                } else {
                     setIsError("Произошла ошибка, попробуйте ещё раз")
                 }
             })
@@ -36,13 +36,18 @@ function Auth(props) {
                 <p className="auth__star">&nbsp;&nbsp; * {isError}</p>
                 <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email"/>
                 <p className="auth__star">&nbsp;&nbsp; *</p>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Пароль" type="password"/>
+                <input value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Пароль"
+                       type="password"/>
                 <p className="auth__symbols">&nbsp;&nbsp;&nbsp; Не менее 8 символов.</p>
                 <a href="#" className="auth__forgot">Забыли пароль?</a>
-                <div><button type="submit" className="auth__btn">Войти</button></div>
+                <div>
+                    <button type="submit" className="auth__btn">Войти</button>
+                </div>
             </form>
             <p className="auth__acc">У вас еще нет аккаунта?</p>
-            <Link to="/sign-up"><div className="auth__reg">Зарегистрироваться </div></Link>
+            <Link to="/sign-up">
+                <div className="auth__reg">Зарегистрироваться</div>
+            </Link>
         </div>
     );
 }

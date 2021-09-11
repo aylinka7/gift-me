@@ -1,0 +1,30 @@
+.userholidays{
+  &__block{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 936px;
+    height: 70px;
+    padding: 23px 32px;
+    border: 1px solid #F5F5F5;
+    &-texts{
+      display: flex;
+      position: relative;
+    }
+    &-name{
+      position: absolute;
+      width: 500px;
+      left: 190px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    &-date{
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+  }
+}
